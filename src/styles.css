@@ -1,0 +1,197 @@
+/* Theme: change these to restyle the whole gallery. */
+:root {
+  color-scheme: light dark;
+  --bg: #f7f5f2;
+  --surface: #e9e5df;
+  --text: #1d1b19;
+  --muted: #5f5850;
+  --accent: #c2410c;
+  --overlay: rgb(10 10 10 / 0.88);
+  --bar-bg: #fff;
+  --bar-text: #1d1b19;
+  --gap: 10px;
+  --tile-min-height: 200px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151413;
+    --surface: #26231f;
+    --text: #f1ede7;
+    --muted: #b3aa9f;
+    --accent: #fb923c;
+    --bar-bg: #1f1d1b;
+    --bar-text: #f1ede7;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Page */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 64px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+.page-header p,
+.notice {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Collage */
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.tile {
+  position: relative;
+  min-height: var(--tile-min-height);
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--surface);
+}
+
+.tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition:
+    filter 0.3s ease,
+    transform 0.6s ease;
+}
+
+.tile:hover img,
+.tile:focus-visible img {
+  filter: none;
+  transform: scale(1.03);
+}
+
+/* Lightbox */
+
+.lightbox {
+  --bar-height: 72px;
+  --lightbox-gap: 24px;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay);
+}
+
+@media (min-width: 600px) {
+  .lightbox {
+    --bar-height: 64px;
+    --lightbox-gap: 48px;
+  }
+}
+
+.lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  max-width: 94vw;
+}
+
+/* The whole photo always fits in the window, portrait or landscape. */
+.lightbox-figure img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 94vw;
+  max-height: calc(100vh - var(--bar-height) - var(--lightbox-gap));
+  max-height: calc(100dvh - var(--bar-height) - var(--lightbox-gap));
+  align-self: center;
+  background: var(--surface);
+}
+
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--bar-height);
+  padding: 8px 12px;
+  background: var(--bar-bg);
+  color: var(--bar-text);
+}
+
+.lightbox-bar button,
+.lightbox-close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-text {
+  flex: 1;
+  text-align: center;
+}
+
+.lightbox-caption {
+  display: block;
+}
+
+.lightbox-detail {
+  display: block;
+  font-size: 0.85em;
+  opacity: 0.75;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile img {
+    transition: none;
+  }
+}
