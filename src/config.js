@@ -3,7 +3,8 @@
 
 export const config = {
   // Your Cloudinary cloud name: the part after res.cloudinary.com/ in any
-  // of your image URLs.
+  // of your image URLs. Required, and only read from the environment so it
+  // stays out of the repo: set it in .env locally and in your host's settings.
   cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "",
 
   // Every image with this tag appears in the gallery, in upload order.

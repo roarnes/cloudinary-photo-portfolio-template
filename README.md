@@ -71,12 +71,13 @@ npm run dev
 
 ## Configure
 
-Set these in `.env` (or your host's environment variables), or edit the
+Set these in `.env` (or your host's environment variables). The cloud name
+has no default, so it never ends up in the repo; the others fall back to the
 defaults in [`src/config.js`](src/config.js):
 
 | Variable | What it is |
 | --- | --- |
-| `VITE_CLOUDINARY_CLOUD_NAME` | Your cloud name, the part after `res.cloudinary.com/` |
+| `VITE_CLOUDINARY_CLOUD_NAME` | **Required.** Your cloud name, the part after `res.cloudinary.com/` |
 | `VITE_CLOUDINARY_TAG` | The tag whose photos to show |
 | `VITE_SITE_TITLE` | Page heading |
 | `VITE_SITE_SUBTITLE` | Line under the heading |

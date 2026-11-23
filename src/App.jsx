@@ -11,6 +11,10 @@ export const App = () => {
   const openerRef = useRef(null);
 
   useEffect(() => {
+    if (!config.cloudName) {
+      setStatus("unconfigured");
+      return;
+    }
     let isCurrent = true;
     fetchPhotos()
       .then((result) => {
@@ -42,6 +46,11 @@ export const App = () => {
         <p>{config.subtitle}</p>
       </header>
 
+      {status === "unconfigured" && (
+        <p className="notice">
+          Set VITE_CLOUDINARY_CLOUD_NAME to your Cloudinary cloud name.
+        </p>
+      )}
       {status === "error" && (
         <p className="notice">The photos couldn't load right now.</p>
       )}
