@@ -7,7 +7,7 @@ export const config = {
   // stays out of the repo: set it in .env locally and in your host's settings.
   cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "",
 
-  // Every image with this tag appears in the gallery, in upload order.
+  // Every image with this tag appears in the gallery, newest first.
   tag: import.meta.env.VITE_CLOUDINARY_TAG || "portfolio",
 
   // Page heading and the line under it.

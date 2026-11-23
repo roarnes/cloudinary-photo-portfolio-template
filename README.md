@@ -58,7 +58,7 @@ npm run dev
 ## Set up Cloudinary
 
 1. **Tag your photos.** Give every photo you want to show the same tag,
-   e.g. `portfolio`. They appear in upload order.
+   e.g. `portfolio`. They appear newest first.
 2. **Allow the resource list.** The gallery reads
    `https://res.cloudinary.com/<cloud>/image/list/<tag>.json`, which is
    off by default. In the Cloudinary console go to **Settings → Security →
