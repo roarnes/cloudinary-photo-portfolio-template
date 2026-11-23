@@ -7,7 +7,7 @@ deploy. No backend, no database, no build-time image processing.
 It shows a collage of grayscale tiles that come to colour on hover, and a
 lightbox that fits any photo to the screen.
 
-**Live demo:** _coming soon_
+**Live demo:** [photos.arnes.dev](https://photos.arnes.dev)
 
 ## What makes it fast
 
