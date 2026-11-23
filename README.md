@@ -48,8 +48,8 @@ How:
 ## Quick start
 
 ```bash
-git clone https://github.com/roarnes/cloudinary-photo-portfolio.git
-cd cloudinary-photo-portfolio
+git clone https://github.com/roarnes/cloudinary-photo-portfolio-template.git
+cd cloudinary-photo-portfolio-template
 npm install
 cp .env.example .env   # then fill in your details
 npm run dev

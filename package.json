@@ -1,5 +1,5 @@
 {
-  "name": "cloudinary-photo-portfolio",
+  "name": "cloudinary-photo-portfolio-template",
   "version": "1.0.0",
   "description": "A fast photo portfolio template: a lazy-loaded collage and lightbox served from a Cloudinary tag, no backend needed.",
   "license": "MIT",
