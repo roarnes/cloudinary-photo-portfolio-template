@@ -8,11 +8,9 @@ export const config = {
   cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "",
 
   // Every image with this tag appears in the gallery, in upload order.
-  tag: import.meta.env.VITE_CLOUDINARY_TAG || "shoots",
+  tag: import.meta.env.VITE_CLOUDINARY_TAG || "portfolio",
 
   // Page heading and the line under it.
-  title: import.meta.env.VITE_SITE_TITLE || "Shoots",
-  subtitle:
-    import.meta.env.VITE_SITE_SUBTITLE ||
-    "Film pictures I take when I'm not coding",
+  title: import.meta.env.VITE_SITE_TITLE || "Your page title",
+  subtitle: import.meta.env.VITE_SITE_SUBTITLE || "A line about your photos",
 };
